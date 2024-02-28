@@ -1,5 +1,5 @@
 import axios from "axios"
-import { CompanyIncomeStatement, CompanyKeyMetrics, CompanyProfile, CompanySearch } from "./CoDataTypes";
+import { CompanyBalanceSheet, CompanyIncomeStatement, CompanyKeyMetrics, CompanyProfile, CompanySearch } from "./CoDataTypes";
 
 interface SearchResponse {
     data: CompanySearch[];
@@ -55,3 +55,12 @@ export const getIncomeStatement = async (query: string) => {
     }
 };
 
+export const getBalanceSheet = async (query: string) => {
+    try {
+        const data = await axios.get<CompanyBalanceSheet[]>(`https://financialmodelingprep.com/api/v3/balance-sheet-statement/${query}?apikey=JQ4cRTJbMx5CmzVicDYb1vcYeA5cG4cw`)
+
+        return data;
+    } catch (error: any){
+        console.log("Unexpected error: ", error.message)
+    }
+};
