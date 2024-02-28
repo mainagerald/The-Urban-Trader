@@ -1,7 +1,5 @@
 import React, { ChangeEvent, SyntheticEvent, useState } from 'react'
 import CardList from '../../Components/CardList/CardList'
-import Hero from '../../Components/Hero/Hero'
-import Navbar from '../../Components/Portfolio/Navbar/Navbar'
 import PortfolioList from '../../Components/Portfolio/PortfolioList/PortfolioList'
 import Search from '../../Components/Search/Search'
 import { searchCompanies } from '../../API'
