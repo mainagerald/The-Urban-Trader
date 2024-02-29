@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { CompanyBalanceSheet, CompanyCashFlow } from '../../CoDataTypes';
+import { CompanyBalanceSheet } from '../../CoDataTypes';
 import { useOutletContext } from 'react-router';
 import { getBalanceSheet } from '../../API';
 import RatioList from '../RatioList/RatioList';
-import { log } from 'console';
-import axios from 'axios';
+import Spinner from '../Spinner/Spinner';
 
 type Props = {}
 
@@ -38,7 +37,7 @@ const config = [
       render: (company: CompanyBalanceSheet) => company.otherCurrentLiabilities,
     },
     {
-      label: <div className="font-bold">Total Liabilites</div>,
+      label: "Total Liabilites",
       render: (company: CompanyBalanceSheet) => company.totalLiabilities,
     },
     {
@@ -82,8 +81,8 @@ const BalanceSheet = (props: Props) => {
         <RatioList config={config} data={balanceSheet}/>
     )
     :(
-        <h1>Company not available!</h1>
-    )}
+      <Spinner/>
+      )}
     </>
   )
 }
