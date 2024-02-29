@@ -1,5 +1,5 @@
 import axios from "axios"
-import { CompanyBalanceSheet, CompanyCashFlow, CompanyComparisonData, CompanyIncomeStatement, CompanyKeyMetrics, CompanyProfile, CompanySearch } from "./CoDataTypes";
+import { CompanyBalanceSheet, CompanyCashFlow, CompanyComparisonData, CompanyIncomeStatement, CompanyKeyMetrics, CompanyProfile, CompanySearch, CompanyTenK } from "./CoDataTypes";
 
 interface SearchResponse {
     data: CompanySearch[];
@@ -78,6 +78,16 @@ export const getCashFlowStatement = async (query: string) => {
 export const getComparableData = async (query: string) => {
     try {
         const data = await axios.get<CompanyComparisonData[]>(`https://financialmodelingprep.com/api/v4/stock_peers?symbol=${query}&apikey=JQ4cRTJbMx5CmzVicDYb1vcYeA5cG4cw`)
+
+        return data;
+    } catch (error: any){
+        console.log("Unexpected error: ", error.message)
+    }
+};
+
+export const getTenK = async (query: string) => {
+    try {
+        const data = await axios.get<CompanyTenK[]>(`https://financialmodelingprep.com/api/v3/sec_filings/${query}?type=10-K&page=0&apikey=JQ4cRTJbMx5CmzVicDYb1vcYeA5cG4cw`)
 
         return data;
     } catch (error: any){

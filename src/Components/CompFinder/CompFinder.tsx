@@ -3,6 +3,8 @@ import { CompanyComparisonData } from '../../CoDataTypes';
 import { getComparableData } from '../../API';
 import CompFinderItem from './CompFinderItem/CompFinderItem';
 
+
+//review the api
 type Props = {
     ticker: string;
 }
