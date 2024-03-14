@@ -4,7 +4,7 @@ import { useOutletContext } from 'react-router';
 import { getIncomeStatement } from '../../API';
 import Table from '../Tables/Table';
 import Spinner from '../Spinner/Spinner';
-import { formatLargeMonetaryNumber, formatRatio } from '../Helpers/NumberFormats';
+import { formatLargeMonetaryNumber, formatRatio } from '../../Helpers/NumberFormats';
 
 type Props = {}
 

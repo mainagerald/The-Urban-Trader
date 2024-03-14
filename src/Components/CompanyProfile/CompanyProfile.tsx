@@ -4,7 +4,7 @@ import { useOutletContext } from 'react-router';
 import { getKeyMetrics } from '../../API';
 import RatioList from '../RatioList/RatioList';
 import Spinner from '../Spinner/Spinner';
-import { formatLargeNonMonetaryNumber, formatRatio } from '../Helpers/NumberFormats';
+import { formatLargeNonMonetaryNumber, formatRatio } from '../../Helpers/NumberFormats';
 
 type Props = {}
 
