@@ -21,7 +21,7 @@ const CompanyPage = (props: Props) => {
             setCompany(result?.data[0]);
         }
         getCompanyProflieInit();
-    }, []);
+    }, [ticker]);
 
 
   return (

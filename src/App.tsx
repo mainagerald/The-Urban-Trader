@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router';
 import './App.css';
 import "react-toastify/dist/ReactToastify.css"
-import Navbar from './Components/Portfolio/Navbar/Navbar';
+import Navbar from './Components/Navbar/Navbar';
 import { ToastContainer } from 'react-toastify';
 import { UserProvider } from './Context/UseAuth';
 
